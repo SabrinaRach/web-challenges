@@ -31,7 +31,8 @@ body {
 .fish {
   width: 20rem;
   margin: 2rem auto;
-
+  display: grid;
+  grid-template-columns: 75% 25%;
   /* Add styles to the container */
 }
 
