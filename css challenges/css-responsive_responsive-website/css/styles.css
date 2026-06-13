@@ -250,7 +250,7 @@ CSS based on conditions such as viewport width, etc. */
   }
 
   .--forest {
-    grid-column: 1 / 3;
+    grid-column: 1 / 3; /* grid-column fasst grid-column-start und grid-column-end zusammen. Die Werte werden durch einen Schrägstrich getrennt*/
     width: 100%;
     height: 400px;
   }
@@ -262,7 +262,7 @@ CSS based on conditions such as viewport width, etc. */
   }
 
   .--desert {
-    grid-column: 2 / 3;
+    grid-column: 2 / 3; /* würde bedeuten, dass desert in der Mitte startet und bis zum rechten Ende geht, deshalb mit margin */
     justify-self: center;
     width: 100%;
     margin-right: 100%;
