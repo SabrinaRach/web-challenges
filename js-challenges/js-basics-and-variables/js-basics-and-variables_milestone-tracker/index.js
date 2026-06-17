@@ -21,7 +21,26 @@ const yearsPracticing = Number(process.argv[2]); // This takes the `<years>` ent
 
 console.log("You've been practicing for: " + yearsPracticing + " years");
 
-const totalDays = 3 * 365;
-const remainingDays = (10 - 3) * 365;
-const percentageMilestone = (3 / 10) * 100;
-const practiceHours = totalDays * 1;
+// 1. The total number of days you've been practicing (assume 365 days/year).
+console.log("total number of days: ", 365 * yearsPracticing);
+
+// 2. The estimated number of remaining days to reach a 10-year milestone.
+const remainingDays = (10 - yearsPracticing) * 365;
+console.log(
+  "estimated number of remaining days to reach a 10-year milestone: ",
+  remainingDays,
+);
+
+// 3. The percentage of the milestone you've already completed.
+const percentageMilestone = (yearsPracticing / 10) * 100;
+console.log(
+  "percentage of milestones you've already completed: ",
+  percentageMilestone,
+);
+
+//4. The cumulative number of days you've spent practicing, assuming an average of 1 hour of practice per day.
+const cumulativeNumberOfPractice = (yearsPracticing * 365) / 24;
+console.log(
+  "The cumulative number of days you've spent practicing: ",
+  cumulativeNumberOfPractice,
+);
