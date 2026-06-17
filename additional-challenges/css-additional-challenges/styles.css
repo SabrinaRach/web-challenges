@@ -13,7 +13,7 @@ h3 {
   margin-top: 20px;
 }
 
-div {
+ .flex-component-workout div {
   background-color: rgb(80, 167, 29);
   border-radius: 8px;
   margin-left: 10px;
@@ -95,8 +95,17 @@ p {
 
 .middle-section {
   background-color: rgba(241, 198, 54, 0.986);
-  padding: 1px;
+  padding: 2px 2px;
   border-radius: 8px;
+
+  display:flex;
+}
+
+.left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 2;
 }
 
 .bottom-section {
@@ -106,4 +115,23 @@ p {
   padding: 10px;
   margin-top: 5px;
   border-radius: 8px;
+}
+
+.section-one {
+    flex: 2;
+    background-color: rgb(2, 2, 179);
+    padding: 5px 2px 15px 2px;
+}
+
+.section-two,
+.section-three {
+    flex: 1;
+    background-color: aquamarine;
+    padding: 5px;
+}
+
+.section-four {
+    flex: 1;
+    background-color: rgb(49, 198, 218);
+    padding: 5px;
 }
