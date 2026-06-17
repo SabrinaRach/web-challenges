@@ -12,14 +12,14 @@ h3 {
 }
 
 div {
-    background-color: rgb(54, 117, 17);
+    background-color: rgb(80, 167, 29);
     border-radius: 8px;
     margin-left: 10px;
     margin-right: 10px;
 }
 
 p {
-    background-color: rgb(9, 86, 202);
+    background-color: rgb(53, 131, 248);
     color: white;
     border-radius: 8px;
     padding: 0.5rem 0.5rem 0.5rem 0.5rem;
@@ -29,5 +29,48 @@ p {
 
 .no-flex-on-the-children {
     display: flex;
-    
+    justify-content: space-between;
+}
+
+.equally-spaced {
+    display: flex;
+    flex-direction: row;
+}
+
+.equally-spaced p {
+    flex: 1;
+}
+
+.one-element-bigger {
+    display: flex;
+    flex-direction: row;
+}
+
+.one-element-bigger p{
+    flex: 1;
+}
+
+.one-element-bigger p:nth-child(1) {
+    flex: 2;
+}
+
+.one-element-bigger-one-even-bigger {
+    display: flex;
+    flex-direction: row;
+}
+
+.one-element-bigger-one-even-bigger p {
+    flex: 1;
+}
+
+.one-element-bigger-one-even-bigger p:nth-child(1) {
+    flex: 2;
+}
+
+.one-element-bigger-one-even-bigger p:nth-child(2) {
+    flex: 3;
+}
+
+.one-element-bigger-one-even-bigger p:nth-child(3) {
+    flex: 1;
 }
