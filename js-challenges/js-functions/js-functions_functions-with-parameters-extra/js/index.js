@@ -21,9 +21,13 @@ printSquare(5);
 */
 
 // Uncomment the following function calls and implement the function `printCircumference`.
+function printCircumference(radius) {
+  const formula = 2 * 3.14 * radius;
+  console.log(formula);
+}
 
-// printCircumference(4);
-// printCircumference(6);
+printCircumference(4);
+printCircumference(6);
 
 /*
 3: Write a function that accepts the width and length of a rectangle
@@ -34,6 +38,10 @@ printSquare(5);
 */
 
 // Uncomment the following function calls and implement the function `printRectangleArea`.
+function printRectangleArea(width, length) {
+  const area = width * length;
+  console.log("The area of the rectangle is " + area + ".");
+}
 
-// printRectangleArea(5, 7);
-// printRectangleArea(3, 4);
+printRectangleArea(5, 7);
+printRectangleArea(3, 4);
