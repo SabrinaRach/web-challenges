@@ -17,7 +17,7 @@ lowercaseButton.addEventListener("click", () => {
 });
 
 switchButton.addEventListener("click", () => {
-  const temp = firstInput.value; // const temp als Hilfsvariable
+  const tempValue = firstInput.value; // const tempValue als Hilfsvariable, da die zweite Zeile den firstInput sonst überschreiben würde
   firstInput.value = secondInput.value;
-  secondInput.value = temp;
+  secondInput.value = tempValue;
 });
