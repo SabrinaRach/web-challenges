@@ -40,7 +40,7 @@ const nestedNumbers = [10, [20, 30, [40, 50]]];
 
 const nestedNumber = nestedNumbers[1][2][0];
 
-// index 0 = 10, index 1 = [20, 30 [40,, 50]], index 2 [40, 50]; in index 2 ist der gesuchte Wert wieder auf Index 0 --> diese Schritte jetzt rückwärts abgehen. Also 0, 2, 1
+// index 0 = 10, index 1 = [20, 30 [40, 50]], index 2 [40, 50]; in index 2 ist der gesuchte Wert wieder auf Index 0 --> diese Schritte jetzt rückwärts abgehen. Also 0, 2, 1
 
 console.log(nestedNumber);
 
