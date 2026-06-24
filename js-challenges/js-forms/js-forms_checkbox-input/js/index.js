@@ -13,6 +13,8 @@ function showTosError() {
 }
 
 // --v-- write your code here --v--
+
+// Terms of Service Checkbox
 hideTosError(); //Fehlermeldung weg beim Laden
 
 tosCheckbox.addEventListener("change", () => {
@@ -24,15 +26,38 @@ tosCheckbox.addEventListener("change", () => {
   }
 });
 
+// --^-- write your code here --^--
+
+// für Bonus: Success Message
+
+const success = document.querySelector('[data-js="success"]');
+
+hideTosError();
+success.hidden = true;
+
+//function showSuccess() {
+//  success.removeAttribute("hidden");
+//}
+// ist das gleiche wie success.hidden = false; //anzeigen
+
+//function hideSuccess() {
+//  success.setAttribute("hidden", "");
+//}
+// ist das gleiche wie success.hidden = true; //verstecken
+
+// "submit" nachdem Formular gesendet wurde
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
   if (!tosCheckbox.checked) {
-    //wenn nicht akzeptiert: stoppen
+    //ist das gleiche wie tosCheckbox.checked === false durch das Ausrufezeichen ("nicht" angehakt)
     showTosError();
+    success.hidden = true;
     return;
   }
-  // --^-- write your code here --^--
+
+  hideTosError();
+  success.hidden = false;
 
   // eslint-disable-next-line no-alert
   alert("Form submitted");
