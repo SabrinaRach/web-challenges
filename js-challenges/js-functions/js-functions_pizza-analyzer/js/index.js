@@ -12,7 +12,7 @@ const output = document.querySelector('[data-js="output"]');
 pizzaInput1.addEventListener("input", () => {
   // Write your code here
   //Werte auslesen
-  const pizzaSize1 = Number(pizzaInput1.value); //number macht aus string eine Zahl
+  const pizzaSize1 = Number(pizzaInput1.value); //number macht aus string eine Zahl, hier nicht zwingend nötig, denn die Operatoren (/, **, *) konvertieren in JS automatisch in numbers
   const pizzaSize2 = Number(pizzaInput2.value);
   //Anzeige im Browser
   output.textContent = Math.round(
