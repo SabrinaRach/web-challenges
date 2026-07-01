@@ -45,7 +45,9 @@ let loaderActive = false;
 toggleLoaderButton.addEventListener("click", () => {
   // Add your solution below
   loaderActive != loaderActive;
-  loaderContainer.classList.toggle("active"); /*classList = Steuerzentrale für CSS-Klassen in JS, steuert hier das active auf dem .loader-container an */
+  loaderContainer.classList.toggle(
+    "active",
+  ); /*classList = Steuerzentrale für CSS-Klassen in JS, steuert hier das active auf dem .loader-container an */
 });
 
 /*  -----------------------------------------------------------
@@ -56,5 +58,9 @@ const slideInBox = document.querySelector("[data-js=slideInBox]");
 
 slideInButton.addEventListener("click", () => {
   // Add your solution below
-slideInBox.classList.toggle("active");
+  slideInBox.style.transform = "translateX(100%)"; // Initialzustand: Setzt die Position auf 100%, damit es von rechts sichtbar wird
+  slideInBox.classList.toggle("active");
+  if (slideInBox.classList.contains("active")) {
+    slideInBox.style.transform = "translateX(0)"; // Setzt die Position auf 0, damit es sichtbar wird
+  }
 });
