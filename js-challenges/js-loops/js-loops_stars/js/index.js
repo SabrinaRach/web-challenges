@@ -9,7 +9,7 @@ function renderStars(filledStars) {
 
   // --v-- write or modify code below this line --v--
   // Use a `for` loop inside the function to create 5 stars.
-  for (let i = 1; i <= 5; i++) {
+  for (let star = 1; star <= 5; star++) {
     // create an `img` element, setting its `src` attribute to the path of the empty star image (`assets/star-empty.svg`).
     console.log(star);
     const imgElement = document.createElement("img");
