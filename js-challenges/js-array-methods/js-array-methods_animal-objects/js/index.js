@@ -1,0 +1,159 @@
+console.clear();
+
+const animals = [
+  {
+    name: "cat",
+    weight: 4,
+    continents: [
+      "Europe",
+      "Asia",
+      "Africa",
+      "Australia",
+      "North-America",
+      "South-America",
+    ],
+  },
+  {
+    name: "dog",
+    weight: 10,
+    continents: [
+      "Europe",
+      "Asia",
+      "Africa",
+      "Australia",
+      "North-America",
+      "South-America",
+    ],
+  },
+  { name: "elephant", weight: 4000, continents: ["Africa", "Asia"] },
+  {
+    name: "rabbit",
+    weight: 2,
+    continents: [
+      "Europe",
+      "Asia",
+      "Africa",
+      "Australia",
+      "North-America",
+      "South-America",
+    ],
+  },
+  { name: "lion", weight: 200, continents: ["Africa"] },
+  { name: "tiger", weight: 150, continents: ["Asia"] },
+  {
+    name: "horse",
+    weight: 500,
+    continents: [
+      "Europe",
+      "Asia",
+      "Africa",
+      "Australia",
+      "North-America",
+      "South-America",
+    ],
+  },
+  { name: "giraffe", weight: 600, continents: ["Africa"] },
+  { name: "zebra", weight: 300, continents: ["Africa"] },
+  {
+    name: "penguin",
+    weight: 12,
+    continents: ["Africa", "Australia", "Antarctica", "South-America"],
+  },
+  {
+    name: "polar bear",
+    weight: 450,
+    continents: ["North-America", "Asia", "Arctic"],
+  },
+  { name: "panda", weight: 120, continents: ["Asia"] },
+  { name: "koala", weight: 13, continents: ["Australia"] },
+  { name: "kangaroo", weight: 70, continents: ["Australia"] },
+  {
+    name: "monkey",
+    weight: 20,
+    continents: ["South-America", "Asia", "Africa"],
+  },
+  { name: "sloth", weight: 8, continents: ["South-America"] },
+  { name: "hippo", weight: 1500, continents: ["Africa"] },
+  { name: "rhino", weight: 2000, continents: ["Asia", "Africa"] },
+];
+
+// Hint: Besides the array method, check out the string method `startsWith()`.
+const firstAnimalStartingWithLetterG = animals.find((animal) =>
+  animal.name.startsWith("g"),
+);
+console.log(firstAnimalStartingWithLetterG); // returns: { name: 'giraffe', weight: 600, continents: [ 'Africa' ] }
+
+const indexOfAnimalWithNameLongerFive = animals.findIndex(
+  (animal) => animal.name.length > 5,
+);
+console.log(indexOfAnimalWithNameLongerFive); // returns: 2
+
+// Note:
+// - Sorting strings is slightly more complicated than sorting numbers.
+// - You will need if-statements and return values of -1, 1, and 0.
+// - Check out MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+
+// Hint: There is no need to upper-/lowercase the strings before sorting them.
+// Hint: sort() mutates the original array, which is bad.
+// Make sure to use toSorted() instead.
+
+const animalsSortedAlphabetically = animals.toSorted((a, b) => {
+  if (a.name < b.name) {
+    return -1;
+  } else if (a.name > b.name) {
+    return 1;
+  } else {
+    return 0;
+  }
+});
+console.log(animalsSortedAlphabetically); // returns: [ { name: 'cat', weight: 4, continents: ['Europe', 'Asia', ...usw.] }, { name: 'dog', weight: 10, continents: [Array] }, { name: 'elephant', weight: 4000, continents: [Array] }, { name: 'giraffe', weight: 600, continents: [Array] }, { name: 'hippo', weight: 1500, continents: [Array] }, { name: 'kangaroo', weight: 70, continents: [Array] }, { name: 'koala', weight: 13, continents: [Array] }, { name: 'lion', weight: 200, continents: [Array] }, { name: 'monkey', weight: 20, continents: [Array] }, { name: 'panda', weight: 120, continents: [Array] }, { name: 'penguin', weight: 12, continents: [Array] }, { name: 'polar bear', weight: 450, continents: [Array] }, { name: 'rabbit', weight: 2, continents: [Array] }, { name: 'rhino', weight: 2000, continents: [Array] }, { name: 'sloth', weight: 8, continents: [Array] }, { name: 'tiger', weight: 150, continents: [Array] }, { name: 'zebra', weight: 300, continents: [Array] } ]
+
+const animalsSortedByWeightStartingWithLowest = animals.toSorted(
+  (a, b) => a.weight - b.weight,
+);
+console.log(animalsSortedByWeightStartingWithLowest); // returns: [ { name: 'rabbit', weight: 2, continents: [Array] }, { name: 'cat', weight: 4, continents: [Array] }, { name: 'dog', weight: 10, continents: [Array] }, { name: 'penguin', weight: 12, continents: [Array] }, { name: 'koala', weight: 13, continents: [Array] }, { name: 'monkey', weight: 20, continents: [Array] }, { name: 'sloth', weight: 8, continents: [Array] }, { name: 'kangaroo', weight: 70, continents: [Array] }, { name: 'panda', weight: 120, continents: [Array] }, { name: 'tiger', weight: 150, continents: [Array] }, { name: 'lion', weight: 200, continents: [Array] }, { name: 'zebra', weight: 300, continents: [Array] }, { name: 'polar bear', weight: 450, continents: [Array] }, { name: 'horse', weight: 500, continents: [Array] }, { name: 'giraffe', weight: 600, continents: [Array] }, { name: 'hippo', weight: 1500, continents: [Array] }, { name: 'rhino', weight: 2000, continents: [Array] }, { name: 'elephant', weight: 4000, continents: [Array] } ]
+
+// Note:
+// - reverse() mutates the original array (like sort() does), which is bad.
+// Use toReversed() instead (or any other method to get the expected result)
+
+//const aus vorheriger Aufgabe nehmen
+const animalsSortedByWeightReversed =
+  animalsSortedByWeightStartingWithLowest.toReversed();
+console.log(animalsSortedByWeightReversed); // returns: umgekehrte Reihenfolge von animalsSortedByWeightStartingWithLowest
+
+const animalWithWeightMoreThanFivehundredExists = animals.some(
+  (animal) => animal.weight > 500,
+);
+console.log(animalWithWeightMoreThanFivehundredExists); // returns: true
+
+// Hint: Filter for Europe first, then check every animal for its weight.
+const allAnimalsInEuropeWeighLessThanOnehundred = animals
+  .filter((animal) => animal.continents.includes("Europe"))
+  .filter((animal) => animal.weight < 100);
+console.log(allAnimalsInEuropeWeighLessThanOnehundred); // returns: [ { name: 'cat', weight: 4, continents: [Array] }, { name: 'dog', weight: 10, continents: [Array] }, { name: 'rabbit', weight: 2, continents: [Array] } ]
+
+// Hint: filter + map + reduce
+const weightOfAllAnimalsInAfrica = animals
+  .filter((animal) => animal.continents.includes("Africa"))
+  .map((animal) => animal.weight)
+  .reduce((animalsAfrica, weight) => animalsAfrica + weight, 0);
+console.log(weightOfAllAnimalsInAfrica); // returns: 9148
+
+// Hint: As above, but divided by the number of animals in Africa.
+const averageWeightOfAllAnimalsInAfrica =
+  weightOfAllAnimalsInAfrica /
+  animals.filter((animal) => animal.continents.includes("Africa")).length;
+console.log(averageWeightOfAllAnimalsInAfrica); // returns: 762.3333333333334
+
+export {
+  firstAnimalStartingWithLetterG,
+  indexOfAnimalWithNameLongerFive,
+  animalsSortedAlphabetically,
+  animalsSortedByWeightStartingWithLowest,
+  animalsSortedByWeightReversed,
+  animalWithWeightMoreThanFivehundredExists,
+  allAnimalsInEuropeWeighLessThanOnehundred,
+  weightOfAllAnimalsInAfrica,
+  averageWeightOfAllAnimalsInAfrica,
+};
