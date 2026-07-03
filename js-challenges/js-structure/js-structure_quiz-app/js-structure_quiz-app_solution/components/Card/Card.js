@@ -1,10 +1,10 @@
-
-import  { Bookmark } from "../Bookmark/Bookmark.js";
+import { cards } from "../../utils/cards.js";
+import { Bookmark } from "../Bookmark/Bookmark.js";
 
 export function Card(props) {
   const card = document.createElement("article");
   card.classList.add("card");
-  card.innerHTML = /* html */ `
+  card.innerHTML = /*html*/ `
 		<h2 class="card__question" data-js="question"></h2>
 		<button class="card__button-answer" type="button" data-js="answer-button">
 			Show answer
@@ -19,7 +19,7 @@ export function Card(props) {
   const answer = card.querySelector('[data-js="answer"]');
   const tags = card.querySelector('[data-js="tags"]');
   const bookmarkButtonWrapper = card.querySelector(
-    '[data-js="bookmark-button-wrapper"]',
+    '[data-js="bookmark-button-wrapper"]'
   );
 
   question.textContent = props.question;
@@ -31,9 +31,6 @@ export function Card(props) {
     tagElement.textContent = "#" + tag;
     tags.append(tagElement);
   });
-  return card;
-}
-// Bookmark button click handler
 
   function handleBookmarkButtonClick(event) {
     cards.find((card) => card.question === props.question).isBookmarked =
@@ -55,3 +52,4 @@ export function Card(props) {
   answerButton.addEventListener("click", handleAnswerButtonClick);
 
   return card;
+}

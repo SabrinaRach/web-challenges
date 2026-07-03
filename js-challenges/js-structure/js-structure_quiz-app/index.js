@@ -1,27 +1,18 @@
-import { Cards } from "./components/Card/Card.js";
-import { Header } from "./components/Header/Header.js";
-import { Bookmark } from "./components/Bookmark/Bookmark.js";
-import { Form } from "./components/Form/Form.js";
-import { CardList } from "./components/CardList/CardList.js";
+//Warum steht nur noch import {App} am Ende in index.js?
+// Weil index.js nur noch der Einstiegspunkt (entry file) ist. Index.js macht nur noch: App starten + rendern
+//   Vorteil: Man kann neue Komponenten hinzufügen, ohne index.js anzufassen
+// es wird eine Komponenten-Hierarchie gebaut:
+//  index.js
+//   ↓
+//  App.js
+//   ↓
+//  Header + Form + CardList
+//   ↓
+//  Card
+//   ↓
+//  Bookmark
+
 import { App } from "./components/App/App.js";
-import { CardProps } from "./components/Card/CardProps.js";
-
-const cards = Cards();
-
-const header = Header();
-
-const bookmark = Bookmark();
-
-const form = Form();
-
-const cardList = CardList();
-
-const app = App();
-
-const cardProps = CardProps();
-
-
-
 
 // The render function renders the app to the DOM
 function render() {
@@ -30,3 +21,24 @@ function render() {
 }
 
 render();
+
+//cardsData.js   → Daten
+//Card.js        → zeigt eine Card
+//CardList.js    → rendert alle Cards
+//Form.js        → fügt neue hinzu
+//Bookmark.js    → togglet Status
+
+
+/* Was App.js jetzt macht:
+export function App() {
+  const app = document.createElement("main");
+
+  app.append(
+    Header(),
+    Form(),
+    CardList()
+  );
+
+  return app;
+} 
+*/
