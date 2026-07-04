@@ -22,6 +22,11 @@ function renderStars(filledStars) {
     } else {
       imgElement.src = "assets/star-empty.svg";
     }
+    // Before appending each star to the `starContainer`, add a `click` event listener to it.
+    imgElement.addEventListener("click", () => {
+      // call `renderStars` with the correct number to display the updated star count.
+      renderStars(star);
+    });
     // Append the `img` element to the `starContainer`.
     starContainer.appendChild(imgElement);
   }
@@ -30,4 +35,5 @@ function renderStars(filledStars) {
 }
 
 //Update the code that calls `renderStars` to pass a number between 0 and 5 as an argument to check if it displays correctly.
-renderStars(3);
+// stars sind nicht gefüllt, wenn die Seite aufgerufen wird.
+renderStars(0);
