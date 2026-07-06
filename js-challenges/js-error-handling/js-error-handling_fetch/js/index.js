@@ -20,7 +20,7 @@ async function fetchUserData(url) {
     const contentType = response.headers.get("content-type");
 
   if (!response.ok) {
-    throw new Error (`error ${response.status}`); // wird als error.message (line 20) ausgespielt
+    throw new Error (`error ${response.status}`); // wird als error.message (line 27) ausgespielt
   }
     return await response.json();
   } catch (error) {
