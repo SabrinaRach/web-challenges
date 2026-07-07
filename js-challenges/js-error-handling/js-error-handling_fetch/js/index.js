@@ -16,12 +16,18 @@ async function fetchUserData(url) {
     vorher prüfen, welchen content-type die Antwort hat (content-type= HTTP-Header, der dem Browser oder deinem JavaScript sagt, welche Art von Daten der Server zurückgeschickt hat)
     mit: const contentType = response.headers.get("content-type");
     
+    Bonus Task momentan nicht lösbar, da bereits nach Zeile 9 der Fehlercode in der Console kommt:
+    CORS blocked (Browser blockiert Request (CORS))
     */
     const contentType = response.headers.get("content-type");
 
-  if (!response.ok) {
-    throw new Error (`error ${response.status}`); // wird als error.message (line 20) ausgespielt
-  }
+    if (!response.ok) {
+      throw new Error(`error ${response.status}`); // wird als error.message (line 33) ausgespielt
+    }
+    //Bonus:
+    else if (!contentType.includes("application/json")) {
+      throw new Error("Expected JSON response but received: " + contentType);
+    }
     return await response.json();
   } catch (error) {
     return { error: error.message };
