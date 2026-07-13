@@ -22,3 +22,4 @@ function Button ({color, disabled, text, onClick}) {
     {text}
   </button>);
 }
+
