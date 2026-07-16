@@ -17,6 +17,7 @@ export default function App() {
 
     /*Bonus Task: reset form fields*/
     event.target.reset();
+    event.target.holiday.focus();
   }
 
   return (
