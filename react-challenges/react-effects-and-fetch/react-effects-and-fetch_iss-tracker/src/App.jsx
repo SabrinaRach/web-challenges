@@ -3,7 +3,7 @@ import Controls from "./components/Controls";
 import Map from "./components/Map";
 import "./styles.css";
 
-/* const URL = "https://api.wheretheiss.at/v1/satellites/25544"; */
+const URL = "https://api.wheretheiss.at/v1/satellites/25544";
 
 export default function App() {
   const [coords, setCoords] = useState({
@@ -12,7 +12,7 @@ export default function App() {
   });
 
   async function getISSCoords() {
-    const response = await fetch("https://api.wheretheiss.at/v1/satellites/25544");
+    const response = await fetch(URL);
     const data = await response.json();
     setCoords({
       longitude: data.longitude,
