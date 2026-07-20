@@ -2,7 +2,7 @@ import useName from "./hooks/useName";
 import "./styles.css";
 
 export default function App() {
-  const [fullName, setFirstName, setLastName] = useName();
+  const [fullName, setFirstName, setLastName] = useName("");
   return (
     <>
       <form>
