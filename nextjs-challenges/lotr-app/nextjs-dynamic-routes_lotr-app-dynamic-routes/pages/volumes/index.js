@@ -26,6 +26,17 @@ und handleRandomVolume() nutzt das Ergebnis, um den Benutzer auf die passende De
     ); /* router.push navigates user to the random page */
   }
 
+  /*  ----- ODER:
+ export default function Volumes() {
+  const router = useRouter();
+
+  function getRandomElement() {
+    const randomElement = volumes[Math.floor(Math.random() * volumes.length)];
+    router.push(
+      `/volumes/${randomElement.slug}`;} 
+      
+      und in <button onClick={getRandomElement}>*/
+
   return (
     <>
       <h1>The Lord of the Rings</h1>
